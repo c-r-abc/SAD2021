@@ -8,6 +8,13 @@
   
  </p> 
  
+ <b> ROLES </b> <br>
+ Bayley: Application Aritect <br>
+ Smoz: Project Manager <br>
+ Conner: <br>
+ Ciska: Database analyst <br>
+ 
+ 
  <table>
   <tr>
     <th>Section </th>
