@@ -4,7 +4,7 @@
 </b> 
 
 <p>
-  This is where all of our things will be saved and tracked, the table below is so we can keep a record of whos doing what and how it's tracking
+  This is where all of our things will be saved and tracked, the table below is so we can keep a record of whos doing what and how it's trackin
   
  </p> 
  
@@ -37,7 +37,7 @@
   <tr>
     <td>Design</td>
     <td> a)Design database <br> b)Design App <br> c)Use case diagram <br> d)Relational database schema <br> e)Activity diagram  <br> f)Class diagram g)Windows navigation diagram </td>
-    <td> a) <br> b) <br> c) <br> d) <br> e) <br> f) </td>
+    <td> a) Ciska <br> b) <br> c) <br> d) Ciska <br> e) <br> f) </td>
     <td> .. </td>
     <td> .. </td>
   </tr>
