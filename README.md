@@ -44,7 +44,7 @@
   <tr>
     <td>Design</td>
     <td> a)Design database <br> b)Design App <br> c)Use case diagram <br> d)Relational database schema <br> e)Activity diagram  <br> f)Class diagram g)Windows navigation diagram </td>
-    <td> a) Ciska <br> b) Bayley <br> c) <br> d) Ciska <br> e) <br> f) </td>
+    <td> a) Ciska <br> b) Bayley <br> c) Smoz and Connor <br> d) Ciska <br> e) Smoz and Connor <br> f) Smoz and Connor </td>
     <td> .. </td>
     <td> .. </td>
   </tr>
