@@ -11,7 +11,7 @@
  <b> ROLES </b> <br>
  Bayley: Application Aritect <br>
  Smoz: Project Manager <br>
- Conner: <br>
+ Conner: Business Analyst <br>
  Ciska: Database analyst <br>
  
  
