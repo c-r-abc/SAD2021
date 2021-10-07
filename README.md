@@ -36,7 +36,7 @@
   <tr>
     <td>Requirements</td>
     <td>Requirements gathering  </td>
-    <td> .. </td>
+    <td>Smoz </td>
     <td> .. </td>
     <td> .. </td>
   </tr>
