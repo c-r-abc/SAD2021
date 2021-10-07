@@ -44,7 +44,7 @@
   <tr>
     <td>Design</td>
     <td> a)Design database <br> b)Design App <br> c)Use case diagram <br> d)Relational database schema <br> e)Activity diagram  <br> f)Class diagram g)Windows navigation diagram </td>
-    <td> a) Ciska <br> b) <br> c) <br> d) Ciska <br> e) <br> f) </td>
+    <td> a) Ciska <br> b) Bayley <br> c) <br> d) Ciska <br> e) <br> f) </td>
     <td> .. </td>
     <td> .. </td>
   </tr>
@@ -52,7 +52,7 @@
   <tr>
     <td>Implementation</td>
     <td>a)Make app talk to DB <br> b)App project code (Fri 1 nov)  <br> c) Presentation and demo app  </td>
-    <td> a) <br> b) <br> c) </td>
+    <td> a) Bayley <br> b) Bayley <br> c) Bayley/could be more ppl?</td>
     <td> .. </td>
     <td> .. </td>
   </tr>
