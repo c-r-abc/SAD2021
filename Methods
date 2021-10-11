@@ -1,0 +1,19 @@
+SAD Assignment_2
+Design an app with the following minimum functionality: 
+	o Add a student to the database, including at least their first name, last name, DOB and 	which group they attend. 
+	o Record attendance for a weekly meeting or weekend intensives. 
+	o Record parts, topics or tests completed. 
+	o Search by name for a student and display their personal details and achievements
+Other functionality you may like to consider: 
+	o Search for students by other criteria eg: age 
+	o Notify teaching staff when a student has competed an entire badge (7 compulsory tests + 	3 optional tests) 
+	o Notify or permit teaching staff to search for parts, topics or tests that have not been 	widely completed (and thus should be the focus of an upcoming meeting program) 
+	o Edit details 
+	o Enter a planned test and the name of the person who will run it. 
+	o A schedule
+	o Any other requirements you can establish
+• Implement an app that communicates with a local SQLite database to achieve the following minimum functionality: 
+	o Add a student to the database, including at least their first name, last name, DOB. 
+	o Record attendance
+	o Record parts, topics or tests completed at a weekly meeting or weekend workshop. 
+	o Search by name and display their personal details and achievements
