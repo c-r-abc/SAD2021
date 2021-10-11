@@ -37,14 +37,14 @@
     <td>Requirements</td>
     <td>Requirements gathering  </td>
     <td>Smoz </td>
-    <td>Created Requirements Document (07/10). Created Report Document (08/10). </td>
+    <td>Created Requirements Document (07/10). <br> Created Report Document (08/10). </td>
     <td> .. </td>
   </tr>
   
   <tr>
     <td>Design</td>
-    <td> a)Design database <br> b)Design App <br> c)Use case diagram <br> d)Relational database schema <br> e)Activity diagram  <br> f)Class diagram g)Windows navigation diagram </td>
-    <td> a) Ciska <br> b) Bayley <br> c) Smoz and Connor <br> d) Ciska <br> e) Smoz and Connor <br> f) Smoz and Connor </td>
+    <td> a) Design database <br> b) Design App <br> c) Use case diagram <br> d) Relational database schema <br> e) Activity diagram <br> f) Class diagram <br> g) Windows navigation diagram </td>
+    <td> a) Ciska <br> b) Bayley <br> c) Smoz and Connor <br> d) Ciska <br> e) Smoz and Connor <br> f) Smoz and Connor <br> g) Connor </td>
     <td> .. </td>
     <td> .. </td>
   </tr>
