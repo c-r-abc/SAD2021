@@ -37,7 +37,7 @@
     <td>Requirements</td>
     <td>Requirements gathering  </td>
     <td>Smoz </td>
-    <td>Created Requirements Document. </td>
+    <td>Created Requirements Document (07/10). Created Report Document (08/10). </td>
     <td> .. </td>
   </tr>
   
