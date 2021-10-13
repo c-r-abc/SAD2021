@@ -37,7 +37,7 @@
     <td>Requirements</td>
     <td>Requirements gathering  </td>
     <td>Smoz </td>
-    <td>Created Requirements Document (07/10). <br> Created Report Document (08/10). <br> Started Gantt Chart (09/10). </td>
+    <td>Created Requirements Document (07/10). <br> Created Report Document (08/10). <br> Started Gantt Chart (09/10). <br> Finished Gantt Chart and Work Breakdown Structure. (10/10) </td>
     <td> .. </td>
   </tr>
   
