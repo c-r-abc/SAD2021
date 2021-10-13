@@ -17,3 +17,35 @@ Other functionality you may like to consider:
 	o Record attendance
 	o Record parts, topics or tests completed at a weekly meeting or weekend workshop. 
 	o Search by name and display their personal details and achievements
+	
+APP must be able to mark attendance
+each week students attend an hour and a half meeting
+store in SQL DB
+
+Recording tests, record what students did and when, test-topic-part
+
+
+
+What students can do:
+	-Attend weekly meetings
+	-weekend activities
+	-work in own time
+	
+Achievements:
+	-A level, focus on special interest
+	-S level, skill
+	-C level, core corriculum
+	
+Leaderboard with students with most badges
+
+Badges:
+	-Diamond(3rd)
+	-Platinum(2nd)
+	-Lithium(1st)
+	
+Each badge 21 tests
+Students must complete 1-10 and 3 of the remaining 11-21.
+Each test 1-14 broken into topics, each topic has betweem 1-4 parts.(Must complete all parts for topic to be complete)
+record date when entire topic complete.
+record completion of a part
+for some tests, students dont need to complete all topics for test to be complete, students or teachers may pick 2-3 topics of own preference. 
