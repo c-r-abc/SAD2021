@@ -8,6 +8,7 @@ package com.mycompany.sadthings;
 import com.mycompany.sadthings.demo;
  import java.sql.*;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
@@ -73,13 +74,80 @@ public class configDB {
     }
     
     
+    
+        static private final int CONTINUE = 0;
+	static private final int TASKA = 1;
+	static private final int TASKB = 2;
+	static private final int TASKC = 3;
+	static private final int TASKD = 4;
+	static private final int TASKE = 5;
+        static private final int EXIT = 6;
  
     
     public static void main(String[] args)
     {
+        //createConn();
+       //d/emo.markRollBook();
+        //closeConn();
         
+        try
+		{
+                    // Reader for user input 
+                    createConn();
+                    int option = CONTINUE;
+			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+			
+			// prints out 'main menu'
+                        while (option != EXIT) 
+			{
+				System.out.println("\n WELCOME to the prototype ");
+				System.out.println("\n Please select an option: ");
+				System.out.println("\n [1] set a new Student ");
+				System.out.println("\n [2] see Students in a class ");
+				System.out.println("\n [3] insert student workbook details");
+				System.out.println("\n [4] see student progress ");
+                                System.out.println("\n [5] mark class roll ");
+				System.out.println("\n [6] Exit");
+				option = Integer.parseInt(in.readLine());
+				Scanner s = new Scanner(System.in);
+				
+				switch(option)
+				{
+					case TASKA:
+						demo.setNewStudent();
+						break;
+					case TASKB:
+						demo.returnStudens();
+						break;
+					case TASKC:
+						demo.InsertWorkbook();
+						break;
+					case TASKD:
+						demo.confirmTest();
+						break;
+                                        case TASKE:
+						demo.markRollBook();
+						break;
+					case EXIT:
+						System.out.println("Bye Bye");
+                                                // added closing connection
+                                                closeConn();
+						break;
+					default:
+						System.out.println("Please enter a valid option [1-6].");
+						break;
+				}
+                                
+                        
+			}
+                        closeConn();
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
        
-        createConn();
+        
         // --- 
         // working 
         // ---
@@ -87,7 +155,7 @@ public class configDB {
         //demo.setNewStudent();
         //demo.returnStudens();
        // demo.InsertWorkbook();
-        demo.confirmTest();
+       // demo.confirmTest();
        
        // ---
        // in progress 
@@ -95,8 +163,9 @@ public class configDB {
        
        //demo.UpdateWorkbook();
         
-        closeConn();
+        
         
     }
     
 }
+
