@@ -1,0 +1,102 @@
+package com.mycompany.sadthings;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+import com.mycompany.sadthings.demo;
+ import java.sql.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+
+/**
+ *
+ * @author Ciska
+ */
+public class configDB {
+    
+        static PreparedStatement p = null;
+        static ResultSet r = null;
+         static Connection c = null;
+         
+         
+         
+         
+         
+         
+
+    public configDB() {
+    }
+        
+    
+         
+         
+    public static void createConn() {
+
+         try{
+            Class.forName("org.sqlite.JDBC");
+            System.out.println();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    
+        
+        try
+        {
+            c = DriverManager.getConnection("jdbc:sqlite:SAD.db");
+        }
+        catch (Exception e) 
+        {
+             System.out.println(e);
+        } 
+    
+    
+}
+    public static void closeConn()
+    {
+    try {
+        r.close();
+         p.close();
+         c.close();
+    
+    } 
+    catch(Exception e)
+    {
+    
+    }
+    
+    
+    }
+    
+    
+ 
+    
+    public static void main(String[] args)
+    {
+        
+       
+        createConn();
+        // --- 
+        // working 
+        // ---
+        //demo.getAttendanceDemo();
+        //demo.setNewStudent();
+        //demo.returnStudens();
+       // demo.InsertWorkbook();
+        demo.confirmTest();
+       
+       // ---
+       // in progress 
+       // --- 
+       
+       //demo.UpdateWorkbook();
+        
+        closeConn();
+        
+    }
+    
+}
