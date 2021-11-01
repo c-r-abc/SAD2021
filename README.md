@@ -58,10 +58,10 @@
     <td> ALL </td>
     <td> complete </td>
   </tr>
-  
-  
-  
-  
-  
-  
+
 </table>
+
+<b> information on the code </b> 
+Database sql commands : contains the sql commands to create the database used. Also contains some insert values for dummy data to complete testing. 
+UI.java: this is the java class that acts as the unser interface between the code stored in backend.java and the database. 
+backend.java: contains the methods and sql commands to execute actions on the database 
