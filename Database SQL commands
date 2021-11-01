@@ -1,0 +1,144 @@
+
+CREATE TABLE "Badges" (
+	"badge_ID"	INTEGER UNIQUE,
+	"badge"	TEXT,
+	PRIMARY KEY("badge_ID")
+);
+
+CREATE TABLE "Score" (
+	"score_ID"	INTEGER NOT NULL UNIQUE,
+	"score"	TEXT NOT NULL,
+	PRIMARY KEY("score_ID" AUTOINCREMENT)
+);
+
+CREATE  "Tests" (
+	"test_ID"	INTEGER NOT NULL UNIQUE,
+	"topic_ID"	INTEGER,
+	"teacher_ID"	INTEGER,
+	"Date"	DATE,
+	"type_ID"	INTEGER NOT NULL,
+	PRIMARY KEY("test_ID")
+);
+
+CREATE TABLE IF NOT EXISTS "TestType" (
+	"type_ID"	INTEGER NOT NULL UNIQUE,
+	"type"	TEXT,
+	PRIMARY KEY("type_ID")
+);
+CREATE TABLE "Topics" (
+	"topic_ID"	INTEGER NOT NULL UNIQUE,
+	"test_ID"	INTEGER,
+	"counter"	INTEGER,
+	PRIMARY KEY("topic_ID")
+);
+
+CREATE TABLE "Parts" (
+	"part_ID"	INTEGER NOT NULL UNIQUE,
+	"topic_ID"	INTEGER,
+	"counter"	INTEGER,
+	PRIMARY KEY("part_ID")
+);
+
+CREATE TABLE  "Attendance" (
+	"Attendance_ID"	INTEGER NOT NULL UNIQUE,
+	"Type"	TEXT NOT NULL,
+	PRIMARY KEY("Attendance_ID")
+);
+
+CREATE TABLE  "Progress" (
+	"progress_ID"	INTEGER NOT NULL UNIQUE,
+	"progress"	TEXT,
+	PRIMARY KEY("progress_ID")
+);
+
+CREATE TABLE  "Teacher" (
+	"teacher_ID"	INTEGER NOT NULL UNIQUE,
+	"first_name"	TEXT NOT NULL,
+	"last_name"	TEXT NOT NULL,
+	"group_ID"	INTEGER,
+	"test_ID"	INTEGER,
+	PRIMARY KEY("teacher_ID")
+);
+
+CREATE TABLE "Students" (
+	"student_ID"	INTEGER NOT NULL UNIQUE,
+	"first_name"	TEXT NOT NULL,
+	"last_name"	TEXT NOT NULL,
+	"DOB"	TEXT,
+	"class"	TEXT,
+	PRIMARY KEY("student_ID" AUTOINCREMENT)
+);
+
+CREATE TABLE  "Class" (
+	"class_ID"	INTEGER NOT NULL UNIQUE,
+	"class_name"	INTEGER,
+	PRIMARY KEY("class_ID" AUTOINCREMENT)
+);
+
+CREATE TABLE "Workbook" (
+	"student_ID"	INTEGER,
+	"dates"	TEXT,
+	"test_ID"	INTEGER,
+	"progress_ID"	INTEGER,
+	"badge_ID"	INTEGER,
+	"Grade"	INTEGER
+);
+
+CREATE TABLE "Rollbook" (
+	"Date"	TEXT,
+	"group_ID"	INTEGER,
+	"student_ID"	INTEGER,
+	"Attendence_ID"	INTEGER,
+	FOREIGN KEY("student_ID") REFERENCES "Students"
+);
+
+INSERT INTO "Badges" ("badge_ID","badge") VALUES (1,'A level'),
+ (2,'S level'),
+ (3,'C level');
+ 
+INSERT INTO "Score" ("score_ID","score") VALUES (1,'Lithium'),
+ (2,'Platinum'),
+ (3,'Diamond');
+ 
+INSERT INTO "Tests" ("test_ID","topic_ID","teacher_ID","Date","type_ID") VALUES (1,NULL,NULL,NULL,1),
+ (2,NULL,NULL,NULL,1),
+ (3,NULL,NULL,NULL,1),
+ (4,NULL,NULL,NULL,1),
+ (5,NULL,NULL,NULL,1),
+ (6,NULL,NULL,NULL,1),
+ (7,NULL,NULL,NULL,1),
+ (8,NULL,NULL,NULL,1),
+ (9,NULL,NULL,NULL,1),
+ (10,NULL,NULL,NULL,1),
+ (11,NULL,NULL,NULL,2),
+ (12,NULL,NULL,NULL,2),
+ (13,NULL,NULL,NULL,2),
+ (14,NULL,NULL,NULL,2),
+ (15,NULL,NULL,NULL,2),
+ (16,NULL,NULL,NULL,2),
+ (17,NULL,NULL,NULL,2),
+ (18,NULL,NULL,NULL,2),
+ (19,NULL,NULL,NULL,2),
+ (20,NULL,NULL,NULL,2),
+ (21,NULL,NULL,NULL,2);
+ 
+INSERT INTO "TestType" ("type_ID","type") VALUES (1,'Mandatory'),
+ (2,'Optional');
+ 
+INSERT INTO "Attendance" ("Attendance_ID","Type") VALUES (1,'Attended'),
+ (2,'Sick/Other Leave'),
+ (3,'no show ');
+ 
+INSERT INTO "Progress" ("progress_ID","progress") VALUES (1,'in progress'),
+ (2,'Completed ');
+INSERT INTO "Students" ("student_ID","first_name","last_name","DOB","class") VALUES (1,'Bob','bob','01-01-2001','1'),
+ (2,'Jane','jane','02-02-2002','2'),
+ (3,'bill ','bill','03-03-2001','2'),
+ (4,'fred','fred','04-04-1998','3'),
+ (5,'maggie','maggie','05-05-2005','1'),
+ (14,'c','r','20/11/1998',NULL);
+ 
+INSERT INTO "Class" ("class_ID","class_name") VALUES (1,'1A'),
+ (2,'2B'),
+ (3,'3C');
+ 
