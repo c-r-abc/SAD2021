@@ -52,7 +52,7 @@
   <tr>
     <td>Implementation</td>
     <td>a)Make app talk to DB <br> b)App project code (Fri 1 nov)  <br> c) Presentation and demo app  </td>
-    <td> a) Bayley <br> b) Bayley <br> c) Bayley/could be more ppl?</td>
+    <td> a) Bayley <br> b) Bayley <br> c) Bayley</td>
     <td> .. </td>
     <td> .. </td>
   </tr>
