@@ -13,6 +13,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -59,7 +60,7 @@ public class demo {
     {
        
           
-        System.out.print("Enter Employee ID: ");
+        //System.out.print("Enter Employee ID: ");
   
         Scanner s = new Scanner(System.in);
         String[] details = new String[4];
@@ -98,10 +99,10 @@ public class demo {
         details[2] = dateOfBirth;
         String dob = dateOfBirth;
         
-        System.out.println("\nPlease enter your group name");
-        String groupName = s.nextLine();
-        details[3] = groupName;
-        String group = groupName;
+        //System.out.println("\nPlease enter your group ID");
+        //nt group = s.nextInt();
+        //details[3] = group;
+        //int groupID = group;
         
        String sql = "INSERT INTO Students VALUES (?,?,?,?,?) ";
        try {
@@ -110,7 +111,7 @@ public class demo {
            PS.setString(2, fn);
            PS.setString(3, ln);
            PS.setString(4, dob);
-           PS.setString(5, group);
+           //PS.setString(5, groupID);
            
            PS.executeUpdate();
            
@@ -147,6 +148,7 @@ public class demo {
                 Studentln = r.getString(3);
                 System.out.println(" Class: "+ group + " student: " 
                         + Studentfn + " " + Studentln + ", "); 
+                
             }
         }
         catch (Exception e)
@@ -171,15 +173,18 @@ public class demo {
         
         System.out.println("Progress: \n 1 = in progress \n 2 = complete");
         int progressID = s.nextInt();
+        
+        System.out.println("Grade if avaliable");
+        int grade = s.nextInt();
   
         Date date = new Date();
         String sdate = date.toString();
         
-        //String sql = ("UPDATE Workbook SET date = " + " \" date \" " + ", test_ID = " + testID + ", progress_ID = " 
+        //String sql = ("UPDATE Workbook SET dates = " + " \" date \" " + ", test_ID = " + testID + ", progress_ID = " 
         //        + progressID + " WHERE student_ID = " + StudentID + ";");
         
-        String sql = ("INSERT INTO Workbook (Student_ID, date, "
-                + "test_ID, progress_ID) VALUES (?,?,?,?)");
+        String sql = ("INSERT INTO Workbook (Student_ID, dates, "
+                + "test_ID, progress_ID, Grade) VALUES (?,?,?,?,?)");
         
         PreparedStatement PS = configDB.c.prepareStatement(sql);
            
@@ -187,6 +192,7 @@ public class demo {
            PS.setString(2, sdate);
            PS.setInt(3, testID);
            PS.setInt(4, progressID);
+           PS.setInt(5, grade);
            
            PS.executeUpdate();
         
@@ -204,9 +210,63 @@ public class demo {
     
     }
     
+    public static void markRollBook()
     
-    
-    
+    {
+            
+     try 
+        {
+        System.out.println(" Enter Class ID: ");
+        Scanner s = new Scanner(System.in); 
+        int classID = s.nextInt();
+        
+        String sql = ("Select s.first_name, s.last_name, s.student_ID From Students s Where s.class= " + classID + " ;");
+        
+            p = configDB.c.prepareStatement(sql);
+            p.clearParameters();
+            r = p.executeQuery();
+        
+            String Studentfn;
+            String Studentln;
+            int StudentID;
+             Date date = new Date();
+            String sdate = date.toString();
+            
+            while( r.next() )
+            {
+                Studentfn = r.getString(1);
+                Studentln = r.getString(2);
+                StudentID = r.getInt(3);
+                System.out.println(" student: " + Studentfn + " " + Studentln + ", "); 
+                    
+                System.out.println("attendance type: 1 = attended, 2 = leave, 3 = no show"); 
+                int attID = s.nextInt();
+                
+                String sql2 = ("INSERT INTO Rollbook (Date, group_ID, student_ID, Attendence_ID) VALUES (?, ?, ?, ?)");
+                PreparedStatement PS = configDB.c.prepareStatement(sql2);
+           
+                PS.setString(1, sdate);
+                PS.setInt(2, classID);
+                PS.setInt(3, StudentID);
+                PS.setInt(4, attID);
+                PS.addBatch();
+                PS.executeBatch();
+                
+                
+                
+            }   
+        
+            
+            
+            
+        }
+     catch (Exception e)
+        {
+            System.out.println(e);
+        }
+        
+        
+    }
     
     
     
@@ -322,7 +382,91 @@ public class demo {
       
     }    
    
+    public static void updateSchedule() {
+        
+        try {
+            System.out.println(" Enter Test ID ");
+        
+            Scanner s = new Scanner(System.in); 
+            int teacherID = s.nextInt();
+        
+            System.out.println(" Enter Teacher ID ");
+            int testID = s.nextInt();
+        
+            System.out.println(" Enter dates as Month day (Oct 1) ");
+            String dates = s.next();
+        
+        
+        
+        String sql = ("INSERT INTO Schedule (teacher_ID, test_ID, dates) VALUES (?,?,?)");
+        
+        PreparedStatement PS = configDB.c.prepareStatement(sql);
+           
+           PS.setInt(1, teacherID);
+           PS.setInt(2, testID);
+           PS.setString(3, dates);
+           
+           TimeUnit.SECONDS.sleep(10);   
+           
+           PS.executeUpdate();
+                
+        }
+        catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+        
+}
+ 
+    public static void viewSchedule()
+    {
+        System.out.println("Enter date to view as month and day (nov 1) ");
+            Scanner s = new Scanner(System.in); 
+            String input = s.nextLine();
+            
+            
+        
+            
+            try { 
+                
+                String sql = ("select * From Schedule JOIN Teacher ON Schedule.teacher_ID = Teacher.teacher_ID WHERE dates like \"" + input + "%\" " );
+                
+                p = configDB.c.prepareStatement(sql);
+                p.clearParameters();
+                r = p.executeQuery();
+            
+            
+            
+            int teacherID;
+            int testID;
+            String date;
+            String fn;
+            String ln;
+            
+            System.out.println("Tests scheduled for: " + input + ": ");
+            
+            
+            while( r.next() )
+            {
+                teacherID = r.getInt(1);
+                testID = r.getInt(2);
+                date = r.getString(3);
+                fn = r.getString(5);
+                ln = r.getString(6);
+                
+                System.out.println("Teacher ID: " + teacherID + " teacher: " + fn + " " + ln + " testID: " + testID);
+                
+            }
+            } 
+            
+            catch (Exception e)
+            {
+            }
+            
+    
+    
+    } 
+    
+    
     }
     
-    
-
