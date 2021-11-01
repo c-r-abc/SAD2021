@@ -16,11 +16,13 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
- *
- * @author Ciska
- * Creating the demo class for the app implementation
+ * 
+ * @author Ciska Roodt & Bayley Lovett
+ * @version 1.5
+ * Creating the backend class for the app implementation, this class contains
+ * all methods that run the sql commands to retrieve and update the database. 
  */
-public class demo {
+public class backend {
    // Basic statements for getting user inputs for the SQL statements 
    static PreparedStatement p = null;
    static ResultSet r = null;
